@@ -10,11 +10,12 @@ import S from './Post.module.css'
 export function Post({ author, publishedAt, content }) {
   const [newCommentText, setNewCommentText] = useState('')
   const [comments, setComments] = useState(['Muito bom Di, parabéns!! 👏👏'])
-
+  const isNewCommentEmpty = !newCommentText
   const publishedDataRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBr,
     addSuffix: true
   })
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -94,7 +95,7 @@ export function Post({ author, publishedAt, content }) {
         />
 
         <footer>
-          <button disabled={!newCommentText} type="submit">
+          <button disabled={isNewCommentEmpty} type="submit">
             Publicar
           </button>
         </footer>
