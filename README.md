@@ -5,10 +5,10 @@
 ---
 
 <p align="center">
-  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
-  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; 
+  <a href="#sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#tecnologias">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#requerimentos">Requerimentos</a> &#xa0; | &#xa0;
+  <a href="#começando">Começando</a> &#xa0; &#xa0; 
 </p>
 
 <br>
