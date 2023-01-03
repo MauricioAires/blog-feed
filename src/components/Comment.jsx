@@ -3,7 +3,7 @@ import { Avatar } from './Avatar'
 
 import S from './Comment.module.css'
 
-export function Comment() {
+export function Comment({ content }) {
   return (
     <div className={S.comment}>
       <Avatar
@@ -26,13 +26,13 @@ export function Comment() {
               <Trash size={24} />
             </button>
           </header>
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
 
         <footer>
           <button>
             <ThumbsUp />
-            Aplaudir <span>20</span>
+            Vamos aplaudir <span>20</span>
           </button>
         </footer>
       </div>
