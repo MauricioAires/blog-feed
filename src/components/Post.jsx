@@ -26,6 +26,10 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment(event) {
     event.preventDefault()
 
+    if (newCommentText === '') {
+      return
+    }
+
     setComments([...comments, newCommentText])
 
     setNewCommentText('')
@@ -33,6 +37,16 @@ export function Post({ author, publishedAt, content }) {
 
   function handleNewCommentChange(comment) {
     setNewCommentText(comment)
+  }
+
+  function deleteComment(comment) {
+    /**
+     * @description Imutabilidade -> As variáveis não sofrem mutação, nós criamos
+     * um novo valor ( um novo espaço na memória)
+     */
+    const commentWithoutDeletedOne = comments.filter((c) => c !== comment)
+
+    setComments(commentWithoutDeletedOne)
   }
 
   return (
@@ -80,13 +94,19 @@ export function Post({ author, publishedAt, content }) {
         />
 
         <footer>
-          <button type="submit">Publicar</button>
+          <button disabled={!newCommentText} type="submit">
+            Publicar
+          </button>
         </footer>
       </form>
 
       <div className={S.commentList}>
         {comments.map((comment) => (
-          <Comment key={comment} content={comment} />
+          <Comment
+            key={comment}
+            content={comment}
+            onDeleteComment={deleteComment}
+          />
         ))}
       </div>
     </article>

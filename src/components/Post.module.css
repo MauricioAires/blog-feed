@@ -113,6 +113,11 @@
   background: var(--green-300);
 }
 
+.commentForm button[type='submit']:disabled {
+  filter: brightness(0.8);
+  cursor: not-allowed;
+}
+
 .commentList {
   margin-top: 2rem;
 }

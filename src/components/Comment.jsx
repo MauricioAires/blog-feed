@@ -3,7 +3,10 @@ import { Avatar } from './Avatar'
 
 import S from './Comment.module.css'
 
-export function Comment({ content }) {
+export function Comment({ content, onDeleteComment }) {
+  function handleDeleteComment() {
+    onDeleteComment(content)
+  }
   return (
     <div className={S.comment}>
       <Avatar
@@ -22,7 +25,7 @@ export function Comment({ content }) {
               </time>
             </div>
 
-            <button title="Excluir">
+            <button onClick={handleDeleteComment} title="Excluir">
               <Trash size={24} />
             </button>
           </header>
