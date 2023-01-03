@@ -50,3 +50,10 @@ export function Comment({ content, onDeleteComment }) {
     </div>
   )
 }
+
+/**
+ * Closures no React
+ *
+ * Sempre que for atualizar uma informação e essa informação
+ * depende do valor que ela tinha alteriormente, utilizar o padão de função
+ */
